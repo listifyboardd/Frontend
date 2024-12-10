@@ -41,8 +41,18 @@ npm run write
 Example
 
 ```typescript
-export interface PageProps = {
+export interface PagePropsInterface = {
     id: number
     text: string
 }
+```
+
+```
+import PagePropsInterface from ....
+
+function Page({id, text}: PagePropsInterface) {
+    return ...
+}
+
+export default Page
 ```
