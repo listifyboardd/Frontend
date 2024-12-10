@@ -30,12 +30,12 @@ npm run write
 
 ### Testing
 
-**Component**: page.ts
+**Component**: page.ts\
 **Unit test**: page.test.ts
 
 ### Types
 
-**Component**: page.ts
+**Component**: page.ts\
 **Types**: types.page.ts
 
 Example
