@@ -1,5 +1,5 @@
-import Footer from './layout/Footer'
-import Header from './layout/Header'
+import Footer from "./layout/Footer";
+import Header from "./layout/Header";
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
       </main>
       <Header></Header>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
