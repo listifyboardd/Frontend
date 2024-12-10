@@ -1,0 +1,9 @@
+.gitignore
+next.config.ts
+package.json
+package-lock.json
+postcss.config.mjs
+tailwind.config.ts
+tsconfig.json
+vitest.config.mts
+.eslintrc.json
