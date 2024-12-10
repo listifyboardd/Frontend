@@ -47,7 +47,7 @@ export interface PagePropsInterface = {
 }
 ```
 
-```
+```typescript
 import PagePropsInterface from ....
 
 function Page({id, text}: PagePropsInterface) {
