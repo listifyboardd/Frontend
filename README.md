@@ -37,22 +37,3 @@ npm run write
 
 **Component**: page.ts\
 **Types**: types.page.ts
-
-Example
-
-```typescript
-export interface PagePropsInterface = {
-    id: number
-    text: string
-}
-```
-
-```typescript
-import PagePropsInterface from ....
-
-function Page({id, text}: PagePropsInterface) {
-    return ...
-}
-
-export default Page
-```
