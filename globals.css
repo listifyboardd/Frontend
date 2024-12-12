@@ -2,36 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.container {
-  
-  margin: 0 auto;
-  font-weight: bold;
-  border: 1px solid red;
-  width: 1280px;
-}
-
-/* styles/globals.css */
-
 @font-face {
   font-family: 'Work Sans';
-  src: url('/fonts-public/WorkSans/WorkSans-Bold/Work-Sans-Regular.woff2') format('woff2'),
-       url('/fonts-public/WorkSans/WorkSans-Bold/Work-Sans-Regular.woff') format('woff');
+  src:
+    url('../public/fonts/WorkSans/WorkSans-Bold/Work-Sans-Regular.woff2')
+      format('woff2'),
+    url('../public/fonts/WorkSans/WorkSans-Bold/Work-Sans-Regular.woff')
+      format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
- 
-    font-family: 'Kreodon';
-    src: url('/fonts-public/Kreadon/bold/Kreadon-Bold.woff2') format('woff2'),
-         url('/fonts-public/Kreadon/bold/Kreadon-Bold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-  }
-  
+  font-family: 'Kreodon';
+  src:
+    url('../public/fonts/Kreadon/bold/Kreadon-Bold.woff2') format('woff2'),
+    url('../public/fonts/Kreadon/bold/Kreadon-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
 
-.color {
+.container {
+  margin: 0 auto;
+  font-weight: bold;
+  width: 1280px;
+}
 
-  font-family: 'Kreodon', sans-serif; /* Використовуємо Work Sans для основного тексту */
+body {
+  font-family: 'Work Sans', sans-serif;
 }
