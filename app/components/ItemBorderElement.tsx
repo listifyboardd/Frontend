@@ -2,10 +2,12 @@ interface BorderEelementProps {
   children: React.ReactNode;
 }
 
-function BorderElement({ children }: BorderEelementProps) {
+function ItemBorderElement({ children }: BorderEelementProps) {
   return (
     <div
       className="
+        font-worksans
+        font-regular
         rounded-3xl
 				flex
 				items-center
@@ -22,4 +24,4 @@ function BorderElement({ children }: BorderEelementProps) {
   );
 }
 
-export default BorderElement;
+export default ItemBorderElement;
