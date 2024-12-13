@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
+      fontFamily: {
+        kreadon: ['Kreadon', 'sans-serif'],
+        worksans: ['Work Sans', 'sans-serif'],
+      }
     },
   },
   plugins: [],
