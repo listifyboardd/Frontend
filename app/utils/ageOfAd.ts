@@ -7,11 +7,11 @@ function getAgeOfAd(publicationDate: string): string {
   const diffInWeeks: number = Math.floor(diffInDays / 7);
 
   if (diffInHours < 24) {
-    return `${Math.floor(diffInHours)} годин тому`;
+    return `${Math.floor(diffInHours)} hours ago`;
   } else if (diffInDays < 7) {
-    return `${diffInDays} днів тому`;
+    return `${diffInDays} days ago`;
   } else {
-    return `${diffInWeeks} тижнів тому`;
+    return `${diffInWeeks} weeks ago`;
   }
 }
 
