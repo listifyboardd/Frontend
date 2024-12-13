@@ -5,7 +5,18 @@
 @import '../public/fonts/WorkSans/WorkSans.css';
 @import '../public/fonts/Kreadon/Kreadon.css';
 
-body {
+/* 
+  Kreadon
+
   font-family: 'Kreadon';
-  font-weight: bold;
-}
+  font-weight: 300-700;
+
+*/
+
+/* 
+  Work Sans
+
+  font-family: 'Work Sans';
+  font-weight: 400-600;
+
+*/
