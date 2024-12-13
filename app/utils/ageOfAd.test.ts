@@ -10,7 +10,7 @@ describe('getAgeOfAd', () => {
     ).toISOString();
 
     const result = getAgeOfAd(oneHourAgo);
-    expect(result).toBe('1 годин тому');
+    expect(result).toBe('1 hours ago');
   });
 
   it('less than 7 days ago', () => {
@@ -21,7 +21,7 @@ describe('getAgeOfAd', () => {
     ).toISOString();
 
     const result = getAgeOfAd(threeDaysAgo);
-    expect(result).toBe('3 днів тому');
+    expect(result).toBe('3 days ago');
   });
 
   it('more than 7 days ago', () => {
@@ -32,7 +32,7 @@ describe('getAgeOfAd', () => {
     ).toISOString();
 
     const result = getAgeOfAd(tenDaysAgo);
-    expect(result).toBe('1 тижнів тому');
+    expect(result).toBe('1 weeks ago');
   });
 
   it('should handle edge cases with exact boundaries', () => {
@@ -43,13 +43,13 @@ describe('getAgeOfAd', () => {
     ).toISOString();
 
     const result = getAgeOfAd(exactlyOneDayAgo);
-    expect(result).toBe('1 днів тому');
+    expect(result).toBe('1 days ago');
 
     const exactlySevenDaysAgo = new Date(
       now.getTime() - 7 * 24 * 60 * 60 * 1000
     ).toISOString();
 
     const result2 = getAgeOfAd(exactlySevenDaysAgo);
-    expect(result2).toBe('1 тижнів тому');
+    expect(result2).toBe('1 weeks ago');
   });
 });
