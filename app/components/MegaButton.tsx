@@ -1,55 +1,51 @@
-'use client';
-import React from 'react';
 import Link from 'next/link';
 
-interface ButtonProps {
+interface MegaButtonProps {
+  link: string;
   text: string;
-  styleType: 'main' | 'small';
-  link?: string;
-  onClick?: () => void;
 }
 
-const Button = ({ text, styleType, link, onClick }: ButtonProps) => {
-  const mainStyle =
-    'absolute w-[517px] h-[506px] left-[189px] top-[28px] bg-[#F2F2F2] rounded-[31px] justify-center font-["Work_Sans"] font-semibold text-[40px] text-black';
-  const smallStyle =
-    'relative w-[191px] h-[79px] left-[515px] bg-[#F2F2F2] rounded-[24px] flex items-center justify-center text-[18px] font-["Kreodon"] font-normal text-[#7A7A7A] z-10 transition-colors duration-300 ease-in-out hover:text-[#5A5A5A]';
-
-  const buttonStyle = styleType === 'main' ? mainStyle : smallStyle;
-
-  return link ? (
-    <Link href={link}>
-      <button className={buttonStyle}>{text}</button>
-    </Link>
-  ) : (
-    <button className={buttonStyle} onClick={onClick}>
-      {text}
-    </button>
-  );
-};
-
-const MegaButton = () => {
-  const handleMainClick = () => {
-    alert('Main button clicked');
-  };
-
-  const handleSmallClick = () => {
-    alert('Checking it now...');
-  };
-
+function MegaButton({ link, text }: MegaButtonProps) {
   return (
-    <div className=" w-[517px] h-[536px] filter drop-shadow-[4px_6px_4px_rgba(0,0,0,0.25)]">
-      {/* Small Button Positioned Inside but Slightly Above */}
-      <Button text="Check it now" styleType="small" onClick={handleSmallClick} />
-
-      {/* Large Button (Container) */}
-      <Button
-        text=""
-        styleType="main"
-        onClick={handleMainClick}
-      />
-    </div>
+    <Link
+      href={link}
+      className="
+        bg-[#8ED2F7]
+        text-[#1A3C55]
+        max-w-[517px]
+        max-h-[517px]
+        aspect-square
+        w-full
+        rounded-[31px]
+        font-kreadon
+        font-semibold
+        text-[40px]
+        flex
+        text-center
+        items-center
+        justify-center
+        relative
+      "
+    >
+      <div
+        className="
+          font-worksans
+          font-medium
+          text-[24px]
+          absolute
+          top-[-26px]
+          right-0
+          bg-[#8ED2F7]
+          rounded-[31px]
+          py-[25px]
+          px-[18px]
+        "
+      >
+        Check it now
+      </div>
+      <span className="max-w-[315px]">{text}</span>
+    </Link>
   );
-};
+}
 
 export default MegaButton;
