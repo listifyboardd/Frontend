@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Listifyboard',
+  description: 'Find your dream job',
+};
 
 export default function RootLayout({
   children,
