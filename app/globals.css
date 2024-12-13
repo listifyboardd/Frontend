@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
+@import '../public/fonts/WorkSans/WorkSans.css';
+@import '../public/fonts/Kreadon/Kreadon.css';
+
+body {
+  font-family: 'Kreadon';
   font-weight: bold;
 }
