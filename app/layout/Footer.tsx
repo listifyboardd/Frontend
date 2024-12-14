@@ -74,9 +74,15 @@ function Footer() {
             Create new ad
           </Link>
           <div className="flex gap-[24px]">
-            <Image src={messangerIMG} alt="messanger"></Image>
-            <Image src={telegramIMG} alt="telegram"></Image>
-            <Image src={linkedinIMG} alt="linkedin"></Image>
+            <Link href="/">
+              <Image src={messangerIMG} alt="messanger"></Image>
+            </Link>
+            <Link href="/">
+              <Image src={telegramIMG} alt="telegram"></Image>
+            </Link>
+            <Link href="/">
+              <Image src={linkedinIMG} alt="linkedin"></Image>
+            </Link>
           </div>
         </div>
       </div>
