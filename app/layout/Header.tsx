@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="container">
       <header className="">
-        <div className="flex justify-between items-center my-[24px]">
+        <div className="flex justify-between items-center py-[24px]">
           <Link href="/" className="font-kreadon font-semibold">
             ListiFyBoard
           </Link>
