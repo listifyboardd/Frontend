@@ -31,3 +31,15 @@ body {
   max-width: 1280px;
   margin: 0 auto;
 }
+
+.form-inputs {
+  @apply text-white 
+    placeholder-white 
+    text-[20px] 
+    border 
+    border-white 
+    rounded-[24px] 
+    pl-[24px] 
+    py-[8px]
+    bg-inherit;
+}
