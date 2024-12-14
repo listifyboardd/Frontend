@@ -32,13 +32,17 @@ body {
   margin: 0 auto;
 }
 
+.border-button {
+  @apply border
+    border-white
+    rounded-[24px];
+}
+
 .form-inputs {
   @apply text-white 
     placeholder-white 
     text-[20px] 
-    border 
-    border-white 
-    rounded-[24px] 
+    border-button
     pl-[24px] 
     py-[8px]
     bg-inherit;

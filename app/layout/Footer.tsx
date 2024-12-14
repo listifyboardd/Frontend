@@ -68,9 +68,7 @@ function Footer() {
             font-medium
             py-[5px]
             px-[24px]
-            border
-            border-white
-            rounded-[24px]
+            border-button
           "
           >
             Create new ad
