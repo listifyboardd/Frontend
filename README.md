@@ -24,7 +24,11 @@ For solve code style issues
 npm run write
 ```
 
-# Frontend
+Add the .env file to the root directory
+
+```bash
+BASE_URL=
+```
 
 ## File structure style
 
