@@ -28,7 +28,7 @@ function Header() {
                 bg-[#1A3C55]
                 text-white
                 rounded-[24px]
-                py-[11px]
+                py-[6px]
                 px-6
               "
               >

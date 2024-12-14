@@ -67,7 +67,7 @@ function Footer() {
             className="
             font-kreadon
             font-medium
-            py-[11px]
+            py-[5px]
             px-[24px]
             border
             border-white
