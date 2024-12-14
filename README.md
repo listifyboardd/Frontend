@@ -24,6 +24,7 @@ For solve code style issues
 npm run write
 ```
 
+## Env file
 Add the .env file to the root directory
 
 ```bash
