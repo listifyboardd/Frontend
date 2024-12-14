@@ -1,9 +1,9 @@
-export interface JobItemPropsInterface {
+export interface JobItemProps {
   adLink: string;
   date: string;
   title: string;
   location: string;
-  jobtype: string;
+  position: string;
   salary: string;
   text: string;
 }
