@@ -14,7 +14,7 @@ function Header() {
     if (response.status === 200) {
       setLink('/profile');
     } else {
-      setLink('/signin');
+      setLink('/authorization');
     }
   }
 
