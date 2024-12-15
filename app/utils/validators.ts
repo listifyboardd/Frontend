@@ -1,4 +1,4 @@
-function validateEmail(email: string) {
+export function validateEmail(email: string) {
   return String(email)
     .toLowerCase()
     .match(
@@ -6,23 +6,16 @@ function validateEmail(email: string) {
     );
 }
 
-function isMinLength(password: string, minLength: number = 8) {
+export function isMinLength(password: string, minLength: number = 8) {
   return password.length >= minLength;
 }
 
-function isNotUsername(password: string, name: string) {
+export function isNotUsername(password: string, name: string) {
   return password !== name;
 }
 
-function hasNumbersAndLetters(password: string) {
+export function hasNumbersAndLetters(password: string) {
   const hasLetters = /[a-zA-Z]/.test(password);
   const hasNumbers = /\d/.test(password);
   return hasLetters && hasNumbers;
 }
-
-export default {
-  validateEmail,
-  isMinLength,
-  isNotUsername,
-  hasNumbersAndLetters,
-};
