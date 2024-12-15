@@ -1,8 +1,25 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import profileIMG from '../../public/images/header/profile.svg';
+import axiosInstance from '../utils/axiosInstance';
 
 function Header() {
+  const [link, setLink] = useState('');
+
+  async function isLogged() {
+    const response = await axiosInstance.get('/api/users/user/');
+    if (response.status === 200) {
+      setLink('/profile');
+    } else {
+      setLink('/signin');
+    }
+  }
+
+  isLogged();
+
   return (
     <div className="container">
       <header className="">
@@ -37,7 +54,7 @@ function Header() {
               >
                 Create new ad
               </Link>
-              <Link href="/profile" className="pr-4">
+              <Link href={link} className="pr-4">
                 <Image src={profileIMG} alt="profile"></Image>
               </Link>
             </div>
