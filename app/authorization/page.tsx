@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
