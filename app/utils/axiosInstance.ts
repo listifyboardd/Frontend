@@ -9,13 +9,13 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
+    const errorMessage = error.response.data.detail;
+    const accessTokenError = 'Authentication credentials were not provided.';
+    const noTokensError = 'No valid refresh token found.';
 
-    if (
-      error.response &&
-      error.response.status === 401 &&
-      !originalRequest._retry
-    ) {
-      originalRequest._retry = true;
+    console.log(errorMessage);
+
+    if (error.response.status === 401 && errorMessage === accessTokenError) {
       try {
         await axiosInstance.post('/api/users/token/refresh/');
         return axiosInstance(originalRequest);
