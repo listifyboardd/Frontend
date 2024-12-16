@@ -11,7 +11,6 @@ axiosInstance.interceptors.response.use(
     const originalRequest = error.config;
     const errorMessage = error.response.data.detail;
     const accessTokenError = 'Authentication credentials were not provided.';
-    const noTokensError = 'No valid refresh token found.';
 
     console.log(errorMessage);
 
