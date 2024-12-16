@@ -12,8 +12,6 @@ axiosInstance.interceptors.response.use(
     const errorMessage = error.response.data.detail;
     const accessTokenError = 'Authentication credentials were not provided.';
 
-    console.log(errorMessage);
-
     if (error.response.status === 401 && errorMessage === accessTokenError) {
       try {
         await axiosInstance.post('/api/users/token/refresh/');
