@@ -39,7 +39,7 @@ body {
 }
 
 .button {
-  @apply leading-[23px] 
+  @apply leading-[20px] 
          py-2.5 
          px-12 
          bg-[#1A3C55] 
