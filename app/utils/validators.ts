@@ -7,10 +7,6 @@ export function isMinLength(password: string, minLength: number = 8) {
   return password.length >= minLength;
 }
 
-export function isNotUsername(password: string, name: string) {
-  return password !== name;
-}
-
 export function hasNumbersAndLetters(password: string) {
   const hasLetters = /[a-zA-Z]/.test(password);
   const hasNumbers = /\d/.test(password);
