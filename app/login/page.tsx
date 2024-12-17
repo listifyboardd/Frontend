@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import eyeIMG from '../../public/images/signin/eye.svg';
@@ -9,39 +9,34 @@ import LogInViaGoogle from '../components/LogInViaGoogle';
 import axiosInstance from '../utils/axiosInstance';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
-import {
-  validateEmail,
-  isMinLength,
-  hasNumbersAndLetters,
-} from '../utils/validators';
+import { validateEmail } from '../utils/validators';
+import { useRouter } from 'next/navigation';
 
 function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [passwordType, setPasswordType] = useState<string>('password');
   const [popupState, setPopupState] = useState<boolean>(false);
-  const [error, setError] = useState<string>('');
-
-  useEffect(() => {
-    if (validateEmail(email)) {
-      return;
-    } else {
-      setError('Invalid email');
-    }
-  }, [email]);
-
-  useEffect(() => {
-    if (!isMinLength(password)) {
-      setError('Password must be at least 8 characters long');
-    } else if (!hasNumbersAndLetters(password)) {
-      setError('Password must contain letters and numbers');
-    } else {
-      setError('');
-    }
-  }, [password]);
+  const [error, setError] = useState<string>();
 
   async function login() {
-    const response = await axiosInstance.post('/api/users/login/');
+    if (!validateEmail(email)) {
+      setError('Invalid email');
+      return;
+    }
+
+    try {
+      await axiosInstance.post('/api/users/login/', {
+        email,
+        password,
+      });
+      router.push('/');
+    } catch (e: any) {
+      if (e.status === 400) {
+        setError('Email or password is incorrect');
+      }
+    }
   }
 
   return (
@@ -64,6 +59,11 @@ function LoginPage() {
           <h1 className="font-kreadon font-medium text-[40px] mb-[32px]">
             Log in
           </h1>
+          {error ? (
+            <div className="text-red-500 text-center p-2 rounded-md mb-2">
+              {error}
+            </div>
+          ) : null}
           <div className="flex flex-col w-full max-w-[392px] gap-[8px]">
             <input
               onChange={(e) => setEmail(e.target.value)}
