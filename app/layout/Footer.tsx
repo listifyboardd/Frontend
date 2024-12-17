@@ -45,8 +45,11 @@ function Footer() {
 
             <div className="flex flex-col gap-[10px]">
               <div className="font-kreadon font-bold">Contacts</div>
-              <Link href="tel:00000000" className="font-kreadon text-[20px]">
-                00000000
+              <Link
+                href="tel:+380986682721"
+                className="font-kreadon text-[20px]"
+              >
+                +380986682721
               </Link>
               <Link
                 href="mailto:listifyboard@gmail.com"
