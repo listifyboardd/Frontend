@@ -65,7 +65,9 @@ function Header() {
                     <Image src={profileIMG} alt="profile"></Image>
                   </Link>
                 ) : (
-                  <AuthLinks />
+                  <div className="w-[224px]">
+                    <AuthLinks />
+                  </div>
                 )}
               </div>
             </div>

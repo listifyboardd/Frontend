@@ -7,6 +7,7 @@ function AuthLinks() {
         bg-[#4170A4] 
         text-[20px] 
         text-white
+        w-full
         max-w-[224px]
         flex
         justify-between
@@ -16,7 +17,7 @@ function AuthLinks() {
         href="/signup"
         className="
         hover:bg-[#1A3C55]
-        	py-[12px]
+        	py-[9px]
 					w-full
 					flex
 					justify-center
@@ -30,7 +31,7 @@ function AuthLinks() {
         href="/login"
         className="
 				hover:bg-[#1A3C55]
-        	py-[12px]
+        	py-[9px]
 					w-full
 					flex
 					justify-center
