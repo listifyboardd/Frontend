@@ -136,7 +136,9 @@ function PostsFilter({ categoriesApiUrl }: PostsFilterProps) {
         className="flex-1 border-[1px] rounded-lg border-[#1A3C55] py-3 px-6 leading-[20px] cursor-pointer relative dropdown-container "
       >
         <button className="flex items-center justify-between w-full">
-          {selectedCategory ? selectedCategory.name : 'Choose category'}
+          <span className="overflow-hidden whitespace-nowrap text-ellipsis">
+            {selectedCategory ? selectedCategory.name : 'Choose category'}
+          </span>
           <Image
             src={dropdownIMG}
             alt="Drodown"
@@ -174,7 +176,9 @@ function PostsFilter({ categoriesApiUrl }: PostsFilterProps) {
         className="flex-1 border-[1px] rounded-lg border-[#1A3C55] py-3 px-6 leading-[20px] cursor-pointer relative dropdown-container "
       >
         <button className="flex items-center justify-between w-full">
-          {selectedCountry ? selectedCountry.name : 'Choose country'}
+          <span className="overflow-hidden whitespace-nowrap text-ellipsis">
+            {selectedCountry ? selectedCountry.name : 'Choose country'}
+          </span>
           <Image
             src={dropdownIMG}
             alt="Drodown"
@@ -212,7 +216,9 @@ function PostsFilter({ categoriesApiUrl }: PostsFilterProps) {
         className="flex-1 border-[1px] rounded-lg border-[#1A3C55] py-3 px-6 leading-[20px] cursor-pointer relative dropdown-container "
       >
         <button className="flex items-center justify-between w-full">
-          {selectedRegion ? selectedRegion.name : 'Choose region'}
+          <span className="overflow-hidden whitespace-nowrap text-ellipsis">
+            {selectedRegion ? selectedRegion.name : 'Choose region'}
+          </span>
           <Image
             src={dropdownIMG}
             alt="Drodown"
