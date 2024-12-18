@@ -6,7 +6,7 @@ function JobList() {
   return (
     <>
       <Header></Header>
-      <PostsFilter></PostsFilter>
+      <PostsFilter categoriesApiUrl="https://listifyboard.com/api/posts/job-posts-categories/"></PostsFilter>
       <main>
         <h1>JobList</h1>
       </main>
