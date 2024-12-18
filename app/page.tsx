@@ -1,9 +1,6 @@
 import Footer from './layout/Footer';
 import Header from './layout/Header';
-import Banner from './components/Banner/Banner';
-import ProfileBar from './layout/ProfileBar/ProfileBar';
-import { ProfileBarProps } from './layout/ProfileBar/ProfileBar.types';
-import manIMG from '../public/images/man1.png';
+import Banner from './components/Banner';
 
 function Home() {
   const bannerType = 'start';
@@ -20,13 +17,8 @@ function Home() {
 
   return (
     <>
-      <div className="">
-        <Header></Header>
-        <Banner type={bannerType}></Banner>
-      </div>
-      <main className="min-w-full">
-        <ProfileBar {...profileBarProps}></ProfileBar>
-      </main>
+      <Header></Header>
+      <Banner></Banner>
       <Footer></Footer>
     </>
   );

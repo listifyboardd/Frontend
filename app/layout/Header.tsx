@@ -39,7 +39,7 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/job" className="hover:font-medium">
+                  <Link href="/job-list" className="hover:font-medium">
                     Job
                   </Link>
                 </li>
