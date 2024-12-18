@@ -7,14 +7,15 @@ import LogInViaGoogle from '../components/LogInViaGoogle';
 import axiosInstance from '../utils/axiosInstance';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
+import { useRouter } from 'next/navigation';
 import {
   validateEmail,
   isMinLength,
-  isNotUsername,
   hasNumbersAndLetters,
 } from '../utils/validators';
 
 function SignUpPage() {
+  const router = useRouter();
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -29,25 +30,12 @@ function SignUpPage() {
     return password === passVerif;
   }
 
-  // TODO error handling
-
-  useEffect(() => {
-    validateEmail(email);
-  }, [email]);
-
-  useEffect(() => {
-    if (!isMinLength(password)) {
-      setError('Password must be at least 8 characters long');
-    } else if (!isNotUsername(password, name)) {
-      setError('Password cannot be the same as your name');
-    } else if (!hasNumbersAndLetters(password)) {
-      setError('Password must contain letters and numbers');
-    } else {
-      setError('');
-    }
-  }, [password]);
-
   async function register() {
+    if (!validateEmail(email)) {
+      setError('Invalid email address');
+      return;
+    }
+
     if (!isPasswordMatch()) {
       setError('Passwords do not match');
       return;
@@ -58,15 +46,32 @@ function SignUpPage() {
       return;
     }
 
-    const response = await axiosInstance.post('/api/users/register/', {
-      email,
-      password1: password,
-      password2: passVerif,
-      first_name: name,
-    });
+    if (!isMinLength(password)) {
+      setError('Password must be at least 8 characters long');
+      return;
+    }
 
-    if (response.status === 201) {
-      setPopupState(true);
+    if (!hasNumbersAndLetters(password)) {
+      setError('Password must contain letters and numbers');
+      return;
+    }
+
+    //Password cannot be the same as your name
+
+    try {
+      const response = await axiosInstance.post('/api/users/register/', {
+        email,
+        password1: password,
+        password2: passVerif,
+        first_name: name,
+      });
+
+      setPopupState(false); // diactivate popup
+      router.push('/');
+    } catch (e: any) {
+      if (e.response.status === 400) {
+        setError('Password cannot be the same as your name');
+      }
     }
   }
 
@@ -89,6 +94,9 @@ function SignUpPage() {
           <h1 className="font-kreadon font-medium text-[40px] mb-[32px]">
             Sign up
           </h1>
+          {error && (
+            <div className="text-red-500 p-2 rounded-md mb-2">{error}</div>
+          )}
           <div className="flex flex-col w-full max-w-[392px] gap-[8px]">
             <input
               className="form-inputs"
@@ -97,6 +105,11 @@ function SignUpPage() {
               placeholder="Name"
             />
             <input
+              style={
+                error === 'Invalid email address'
+                  ? { borderColor: 'rgb(239 68 68)' }
+                  : {}
+              }
               className="form-inputs"
               onChange={(e) => setEmail(e.target.value)}
               type="text"
@@ -104,6 +117,14 @@ function SignUpPage() {
             />
             <div className="relative">
               <input
+                style={
+                  error === 'Passwords do not match' ||
+                  error === 'Password must be at least 8 characters long' ||
+                  error === 'Password cannot be the same as your name' ||
+                  error === 'Password must contain letters and numbers'
+                    ? { borderColor: 'rgb(239 68 68)' }
+                    : {}
+                }
                 className="form-inputs w-full"
                 onChange={(e) => setPassword(e.target.value)}
                 type={passwordType}
