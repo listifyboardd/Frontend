@@ -30,6 +30,19 @@ function Header() {
           <Link href="/" className="font-kreadon font-semibold">
             ListiFyBoard
           </Link>
+          <nav className="flex gap-[24px]">
+            <ul className="flex items-center gap-[37px]">
+              <li className="hover:text-medium">
+                <Link href="/housing" className="hover:font-medium">
+                  Housing
+                </Link>
+              </li>
+              <li>
+                <Link href="/job-list" className="hover:font-medium">
+                  Job
+                </Link>
+              </li>
+            </ul>
           <div className="flex gap-8">
             <nav className="flex gap-[24px]">
               <ul className="flex items-center gap-[37px]">

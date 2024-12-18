@@ -38,6 +38,21 @@ body {
     rounded-[24px];
 }
 
+.button {
+  @apply leading-[20px] 
+         py-2.5 
+         px-12 
+         bg-[#1A3C55] 
+         border-button 
+         text-[white]
+         transition-all
+         duration-300;
+}
+
+.button:hover {
+  @apply bg-[#4170A4];
+}
+
 .form-inputs {
   @apply text-white 
     placeholder-white 
