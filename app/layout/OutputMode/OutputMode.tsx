@@ -9,7 +9,7 @@ interface OutputModeProps {
 }
 
 function OutputMode({ children, title, useSwitcher }: OutputModeProps) {
-  const [mode, setMode] = useState<string>('');
+  const [mode, setMode] = useState<string>('grid');
 
   return (
     <div className="mb-14">
