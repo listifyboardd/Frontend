@@ -6,7 +6,7 @@ interface HousingItemProps {
   location: string;
   purpose: string;
   type: string;
-  price: number;
+  price: string;
   text: string;
 }
 
