@@ -30,26 +30,22 @@ function JobList() {
       <Header></Header>
       <Banner type="job"></Banner>
       <PostsFilter categoriesApiUrl="/api/posts/job-posts-categories/"></PostsFilter>
-      <OutputMode
-        title="Found based on your request"
-        useSwitcher={true}
-        children={
-          <>
-            {jobPosts.map((jobPost) => (
-              <JobItem
-                key={jobPost.id}
-                adLink={`https://listifyboard.com/api/posts/job-posts/${jobPost.slug}/`}
-                date={jobPost.publication_date}
-                title={jobPost.title}
-                location={jobPost.location_name}
-                position={jobPost.type_display}
-                salary={jobPost.salary}
-                text={jobPost.description}
-              />
-            ))}
-          </>
-        }
-      ></OutputMode>
+      <div className="mt-[-80px]">
+        <OutputMode title="Found based on your request" useSwitcher={true}>
+          {jobPosts.map((jobPost) => (
+            <JobItem
+              key={jobPost.id}
+              adLink={`https://listifyboard.com/api/posts/job-posts/${jobPost.slug}/`}
+              date={jobPost.publication_date}
+              title={jobPost.title}
+              location={jobPost.location_name}
+              position={jobPost.type_display}
+              salary={jobPost.salary}
+              text={jobPost.description}
+            />
+          ))}
+        </OutputMode>
+      </div>
       <Footer></Footer>
     </>
   );
