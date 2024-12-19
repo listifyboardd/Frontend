@@ -17,8 +17,7 @@ function JobItem({
     <Link
       href={adLink}
       className="
-      max-w-[517px]
-      aspect-square
+      w-full
       rounded-[31px]
       flex
       flex-col

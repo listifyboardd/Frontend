@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import locationIMG from '../../../public/images/JobItem/location.svg';
-import houseIMG from '../../../public/images/house.jpg';
 import HousingItemProps from './HousingItem.types';
 import getAgeOfAd from '../../utils/ageOfAd';
 
@@ -25,16 +24,16 @@ function HousingItem({
         flex
         flex-col
         justify-between
-        max-w-[517px]
         w-full
-        aspect-square
         text-white
         mb-9
     "
     >
       <Image
-        src={houseIMG}
+        src={imgLink}
         alt="house"
+        layout="fill"
+        objectFit="cover"
         className="
         absolute
         top-0
@@ -75,7 +74,7 @@ function HousingItem({
         </div>
       </div>
       <div className="pl-[24px] pb-8">
-        <div className="max-w-[280px]">
+        <div className="">
           <div
             className="
             font-kreadon
@@ -86,7 +85,7 @@ function HousingItem({
           >
             {title}
           </div>
-          <div className="w-full bg-white h-[1px] mb-[8px]"></div>
+          <div className="w-full bg-white h-[1px] mb-[8px] max-w-[280px]"></div>
           <div className="flex gap-[16px] flex-wrap text-[16px]">
             <div
               className="
