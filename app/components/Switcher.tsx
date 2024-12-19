@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import gridIMG from '../../public/images/switcher/grid.svg';
 import lineIMG from '../../public/images/switcher/line.svg';
@@ -11,15 +8,11 @@ interface SwitcherProps {
 }
 
 function Switcher({ value, onChange }: SwitcherProps) {
-  const [activeElement, setActiveElement] = useState('line');
-
   function changeActiveElement() {
-    if (activeElement === 'line') {
-      setActiveElement('grid');
+    if (value == 'list') {
       onChange('grid');
     } else {
-      setActiveElement('line');
-      onChange('line');
+      onChange('list');
     }
   }
 
@@ -50,7 +43,7 @@ function Switcher({ value, onChange }: SwitcherProps) {
       >
         <div className="relative">
           <Image src={lineIMG} alt="line" className="" />
-          {activeElement === 'line' ? (
+          {value === 'list' ? (
             <div
               className="
             absolute 
@@ -68,7 +61,7 @@ function Switcher({ value, onChange }: SwitcherProps) {
         </div>
         <div className="relative">
           <Image src={gridIMG} alt="grid" className="" />
-          {activeElement === 'grid' ? (
+          {value === 'grid' ? (
             <div
               className="
             absolute 
