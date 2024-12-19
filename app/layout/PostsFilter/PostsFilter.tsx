@@ -1,10 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-import DropDown from '../DropDown/DropDown';
-import { DropDownElement } from '../DropDown/DropDown.type';
+import DropDown from '../../components/DropDown/DropDown';
+import { DropDownElement } from '../../components/DropDown/DropDown.type';
 import {
   Category,
   Country,
@@ -12,27 +11,25 @@ import {
   PostsFilterProps,
 } from './PostsFilter.type';
 
+import axiosInstance from '../../utils/axiosInstance';
+
 function PostsFilter({ categoriesApiUrl }: PostsFilterProps) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [countries, setCountries] = useState<Country[]>([]);
   const [regions, setRegions] = useState<Region[]>([]);
 
   async function fetchCategories() {
-    const response = await axios.get(categoriesApiUrl);
+    const response = await axiosInstance.get(categoriesApiUrl);
     setCategories(response.data);
   }
 
   async function fetchCountries() {
-    const response = await axios.get(
-      'https://listifyboard.com/api/posts/location/countries/'
-    );
+    const response = await axiosInstance.get('/api/posts/location/countries/');
     setCountries(response.data);
   }
 
   async function fetchRegions() {
-    const response = await axios.get(
-      'https://listifyboard.com/api/posts/location/regions/'
-    );
+    const response = await axiosInstance.get('/api/posts/location/regions/');
     setRegions(response.data);
   }
 
@@ -41,8 +38,8 @@ function PostsFilter({ categoriesApiUrl }: PostsFilterProps) {
     const body = {
       country_id: country.id,
     };
-    const response = await axios.post(
-      `https://listifyboard.com/api/posts/location/country-regions/`,
+    const response = await axiosInstance.post(
+      `/api/posts/location/country-regions/`,
       body
     );
     setRegions(response.data);
