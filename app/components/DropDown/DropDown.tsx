@@ -50,7 +50,7 @@ function DropDown({ id, title, elements, onSelect }: DropDownProps) {
         ></Image>
       </button>
       <div
-        className={`${openDropdown === 'open' ? '' : 'hidden'} absolute bg-white text-[20px] w-full top-full left-0 rounded border-[1px] border-[#1A3C55] h-[202px] rounded-tr-none rounded-br-none  overflow-y-auto`}
+        className={`${openDropdown === 'open' ? '' : 'hidden'} absolute bg-white text-[20px] w-full top-full left-0 rounded border-[1px] border-[#1A3C55] h-[202px] rounded-tr-none rounded-br-none  overflow-y-auto z-10`}
       >
         <div
           className="py-2.5 px-3.5 hover:bg-[#64A6D8] transition duration-300 hover:text-white cursor-pointer"

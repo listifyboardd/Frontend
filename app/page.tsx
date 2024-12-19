@@ -64,6 +64,7 @@ function Home() {
           {jobPosts.map((post: JobServerResponse) => {
             return (
               <JobItem
+                key={post.id}
                 adLink="/"
                 date={post.publication_date}
                 title={post.title}
@@ -82,6 +83,7 @@ function Home() {
           {housingPosts.map((post: HousingServerResponse) => {
             return (
               <HousingItem
+                key={post.id}
                 imgLink={post.main_image}
                 adLink="/"
                 date={post.publication_date}
