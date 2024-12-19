@@ -9,6 +9,7 @@ export interface HousingServerResponse {
   title: string;
   short_description: string;
   type: string;
+  price: string;
   publication_date: string;
   slug: string;
   location: number;
@@ -26,7 +27,6 @@ export interface JobServerResponse {
   company_name: string;
   salary: string;
   type: string;
-  price: string;
   publication_date: string;
   slug: string;
   location: number;
