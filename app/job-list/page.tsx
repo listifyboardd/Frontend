@@ -1,26 +1,55 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import PostsFilter from '../components/PostsFilter/PostsFilter';
 import Banner from '../components/Banner/Banner';
-import Switcher from '../components/Switcher'; // Import Switcher component
+import OutputMode from '../layout/OutputMode/OutputMode';
+import JobItem from '../layout/JobItem/JobItem';
+
+import { JobPost } from './page.types';
+
+import axiosInstance from '../utils/axiosInstance';
 
 function JobList() {
-  function switchOnChange(viewType: string): void {
-    console.log(`Switched to ${viewType} view`);
+  const [jobPosts, setJobPosts] = useState<JobPost[]>([]);
+
+  async function fetchJobPosts() {
+    const response = await axiosInstance.get('/api/posts/job-posts/');
+    setJobPosts(response.data.results);
   }
+
+  useEffect(() => {
+    fetchJobPosts();
+  }, []);
+
   return (
     <>
       <Header></Header>
       <Banner type="job"></Banner>
       <PostsFilter categoriesApiUrl="https://listifyboard.com/api/posts/job-posts-categories/"></PostsFilter>
-      <Switcher value="grid" onChange={switchOnChange}></Switcher>
-      <main className="container">
-        <h2 className="font-kreadon text-[36px] font-semibold leading-[46.8px] mb-[32px]">
-          Found based on your request
-        </h2>
-      </main>
+      <OutputMode
+        title="Found based on your request"
+        useSwitcher={true}
+        children={
+          <>
+            {jobPosts.map((jobPost) => (
+              <JobItem
+                key={jobPost.id}
+                adLink={`https://listifyboard.com/api/posts/job-posts/${jobPost.slug}/`}
+                date={jobPost.publication_date}
+                title={jobPost.title}
+                location={jobPost.location_name}
+                position={jobPost.type_display}
+                salary={jobPost.salary}
+                text={jobPost.description}
+              />
+            ))}
+          </>
+        }
+      ></OutputMode>
       <Footer></Footer>
     </>
   );
