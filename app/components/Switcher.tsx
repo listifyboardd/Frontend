@@ -25,10 +25,18 @@ function Switcher({ value, onChange }: SwitcherProps) {
 
   return (
     <div
-      onClick={changeActiveElement}
       className="
+      container
+      flex
+      justify-end
+      !mb-[60px]
+      "
+    >
+      <div
+        onClick={changeActiveElement}
+        className="
+        cursor-pointer
         flex
-        items-center
         justify-between
         rounded-[24px]
         border
@@ -39,12 +47,12 @@ function Switcher({ value, onChange }: SwitcherProps) {
         px-[16px]
         select-none
     "
-    >
-      <div className="relative">
-        <Image src={lineIMG} alt="line" className="" />
-        {activeElement === 'line' ? (
-          <div
-            className="
+      >
+        <div className="relative">
+          <Image src={lineIMG} alt="line" className="" />
+          {activeElement === 'line' ? (
+            <div
+              className="
             absolute 
             top-1/2
             left-1/2
@@ -55,14 +63,14 @@ function Switcher({ value, onChange }: SwitcherProps) {
             w-[38px] 
             h-[38px] 
             z-[-10]"
-          ></div>
-        ) : null}
-      </div>
-      <div className="relative">
-        <Image src={gridIMG} alt="grid" className="" />
-        {activeElement === 'grid' ? (
-          <div
-            className="
+            ></div>
+          ) : null}
+        </div>
+        <div className="relative">
+          <Image src={gridIMG} alt="grid" className="" />
+          {activeElement === 'grid' ? (
+            <div
+              className="
             absolute 
             top-1/2
             left-1/2
@@ -73,8 +81,9 @@ function Switcher({ value, onChange }: SwitcherProps) {
             w-[38px] 
             h-[38px] 
             z-[-10]"
-          ></div>
-        ) : null}
+            ></div>
+          ) : null}
+        </div>
       </div>
     </div>
   );
