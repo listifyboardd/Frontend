@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
-import PostsFilter from '../components/PostsFilter/PostsFilter';
+import PostsFilter from '../layout/PostsFilter/PostsFilter';
 import Banner from '../components/Banner/Banner';
 import OutputMode from '../layout/OutputMode/OutputMode';
 import JobItem from '../layout/JobItem/JobItem';

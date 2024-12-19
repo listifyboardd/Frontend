@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 
-import DropDown from '../DropDown/DropDown';
-import { DropDownElement } from '../DropDown/DropDown.type';
+import DropDown from '../../components/DropDown/DropDown';
+import { DropDownElement } from '../../components/DropDown/DropDown.type';
 import {
   Category,
   Country,
