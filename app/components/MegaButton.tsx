@@ -13,7 +13,6 @@ function MegaButton({ link, text }: MegaButtonProps) {
         bg-[#8ED2F7]
         text-[#1A3C55]
         max-w-[517px]
-        max-h-[517px]
         aspect-square
         w-full
         rounded-[31px]
@@ -43,7 +42,7 @@ function MegaButton({ link, text }: MegaButtonProps) {
       >
         Check it now
       </div>
-      <span className="max-w-[315px]">{text}</span>
+      <span className="max-w-[340px]">{text}</span>
     </Link>
   );
 }
