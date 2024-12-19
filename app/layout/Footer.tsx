@@ -7,7 +7,7 @@ import linkedinIMG from '../../public/images/footer/linkedin.svg';
 
 function Footer() {
   return (
-    <footer className="bg-[#1A3C55] text-white pt-[32px] pb-[24px]">
+    <footer className="bg-[#1A3C55] text-white pt-[32px] pb-[24px] mt-14">
       <div className="container">
         <div className="flex justify-between">
           <div className="">
