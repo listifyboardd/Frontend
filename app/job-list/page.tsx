@@ -29,7 +29,7 @@ function JobList() {
     <>
       <Header></Header>
       <Banner type="job"></Banner>
-      <PostsFilter categoriesApiUrl="https://listifyboard.com/api/posts/job-posts-categories/"></PostsFilter>
+      <PostsFilter categoriesApiUrl="/api/posts/job-posts-categories/"></PostsFilter>
       <OutputMode
         title="Found based on your request"
         useSwitcher={true}
