@@ -24,6 +24,8 @@ function HousingItem({
         flex
         flex-col
         justify-between
+        max-h-[506px]
+        h-full
         w-full
         text-white
         mb-9
@@ -86,7 +88,7 @@ function HousingItem({
             {title}
           </div>
           <div className="w-full bg-white h-[1px] mb-[8px] max-w-[280px]"></div>
-          <div className="flex gap-[16px] flex-wrap text-[16px]">
+          <div className="flex gap-[16px] flex-wrap text-[16px] mr-[24px]">
             <div
               className="
               border-button

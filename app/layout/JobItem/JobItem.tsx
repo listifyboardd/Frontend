@@ -18,6 +18,8 @@ function JobItem({
       href={adLink}
       className="
       w-full
+      max-h-[506px]
+      h-full
       rounded-[31px]
       flex
       flex-col
@@ -63,8 +65,8 @@ function JobItem({
           {title}
         </div>
         <div className="w-full h-[1px] bg-white max-w-[280px]"></div>
-        <div className="max-w-[280px]">
-          <div className="flex justify-between text-[16px] mt-[9px] pr-[15px]">
+        <div className="">
+          <div className="flex flex-wrap gap-[15px] text-[16px] mt-[9px] pr-[15px]">
             <div
               className="
                 border
