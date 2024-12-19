@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Banner from './components/Banner/Banner';
-import PostsFilter from './components/PostsFilter/PostsFilter';
+import PostsFilter from './layout/PostsFilter/PostsFilter';
 import MegaButton from './components/MegaButton';
 import JobItem from './layout/JobItem/JobItem';
 import HousingItem from './layout/HousingItem/HousingItem';

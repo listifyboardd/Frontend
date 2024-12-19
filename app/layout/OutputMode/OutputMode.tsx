@@ -19,7 +19,9 @@ function OutputMode({ children, title, useSwitcher }: OutputModeProps) {
           <Switcher value={mode} onChange={setMode} />
         </div>
       ) : null}
-      <div className="font-kreadon text-4xl font-semibold mb-8">{title}</div>
+      <div className="container font-kreadon text-4xl font-semibold !mb-8">
+        {title}
+      </div>
       {mode == 'list' ? (
         <div className="grid gap-y-6 m-auto max-w-[846px]">{children}</div>
       ) : mode == 'grid' ? (
